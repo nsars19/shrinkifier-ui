@@ -5,19 +5,20 @@ function App() {
   const [fileNames, setFileNames] = useState([]);
 
   const convertToArray = (files) => [...files].slice(0, 10);
+  const slicedArray = (files) => convertToArray(files).slice(0, 10);
 
   const onDrop = (e) => {
     e.preventDefault();
     const files = e.dataTransfer.files;
-    setFiles(convertToArray(files));
-    setFileNames(convertToArray(files).map(({ name }) => name));
+    setFiles(slicedArray(files));
+    setFileNames(slicedArray(files).map(({ name }) => name));
   };
 
   const onFileInput = (e) => {
     const { files } = e.target;
     const fileNames = [...files].map(({ name }) => name).slice(0, 10);
     setFileNames(fileNames);
-    setFiles(convertToArray(files));
+    setFiles(slicedArray(files));
   };
 
   const onSubmit = async () => {
