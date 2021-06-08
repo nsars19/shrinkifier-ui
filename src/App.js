@@ -1,4 +1,5 @@
 import { useState } from "react";
+import uniqid from "uniqid";
 
 function App() {
   const [files, setFiles] = useState([]);
@@ -60,7 +61,7 @@ function App() {
       <div>
         <ul>
           {fileNames.map((file) => (
-            <li>{file}</li>
+            <li key={uniqid()}>{file}</li>
           ))}
         </ul>
       </div>
