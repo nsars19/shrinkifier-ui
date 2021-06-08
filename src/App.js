@@ -37,8 +37,10 @@ function App() {
       body: formData,
     });
 
-    const { zipFile } = await res.json();
-    const file = new File(zipFile.data, "results.zip");
+    const data = await res.blob();
+    const url = URL.createObjectURL(data);
+
+    setFileDownload([url]);
   };
 
   return (
