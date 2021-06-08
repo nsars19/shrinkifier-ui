@@ -3,11 +3,19 @@ import uniqid from "uniqid";
 
 function App() {
   const [files, setFiles] = useState([]);
+  const [fileDownload, setFileDownload] = useState([]);
+  const [dragged, setDragged] = useState(false);
 
   const convertToArray = (files) => [...files];
   const slicedArray = (files) => convertToArray(files).slice(0, 50);
 
+  const onDragOver = (e) => {
+    e.preventDefault();
+    setDragged(true);
+  };
+
   const onDrop = (e) => {
+    setDragged(false);
     e.preventDefault();
     const { files } = e.dataTransfer;
     setFiles(slicedArray(files));
@@ -37,13 +45,16 @@ function App() {
     <div>
       <label
         htmlFor="file-input"
-        onDragOver={(e) => e.preventDefault()}
+        onDragOver={onDragOver}
         onDrop={onDrop}
         style={{
           height: 400,
           width: 400,
           border: "2px solid #404040",
           display: "block",
+          background: dragged ? "#acfaac" : "none",
+          transform: dragged ? "scale(0.9)" : "none",
+          transition: "transform 1s ease, background 300ms ease",
         }}
       >
         <input
