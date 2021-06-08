@@ -68,6 +68,13 @@ function App() {
       </label>
       <button onClick={onSubmit}>Submit Images</button>
       <div>
+        {fileDownload.map((url) => (
+          <a href={url} key={uniqid()}>
+            {url ? "Download" : ""}
+          </a>
+        ))}
+      </div>
+      <div>
         <ul>
           {files.map(({ name }) => (
             <li key={uniqid()}>{name}</li>
