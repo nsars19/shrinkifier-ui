@@ -4,7 +4,7 @@ import uniqid from "uniqid";
 function App() {
   const [files, setFiles] = useState([]);
 
-  const convertToArray = (files) => [...files].slice(0, 10);
+  const convertToArray = (files) => [...files];
   const slicedArray = (files) => convertToArray(files).slice(0, 10);
 
   const onDrop = (e) => {
