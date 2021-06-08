@@ -5,7 +5,7 @@ function App() {
   const [files, setFiles] = useState([]);
 
   const convertToArray = (files) => [...files];
-  const slicedArray = (files) => convertToArray(files).slice(0, 10);
+  const slicedArray = (files) => convertToArray(files).slice(0, 50);
 
   const onDrop = (e) => {
     e.preventDefault();
