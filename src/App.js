@@ -3,22 +3,18 @@ import uniqid from "uniqid";
 
 function App() {
   const [files, setFiles] = useState([]);
-  const [fileNames, setFileNames] = useState([]);
 
   const convertToArray = (files) => [...files].slice(0, 10);
   const slicedArray = (files) => convertToArray(files).slice(0, 10);
 
   const onDrop = (e) => {
     e.preventDefault();
-    const files = e.dataTransfer.files;
+    const { files } = e.dataTransfer;
     setFiles(slicedArray(files));
-    setFileNames(slicedArray(files).map(({ name }) => name));
   };
 
   const onFileInput = (e) => {
     const { files } = e.target;
-    const fileNames = [...files].map(({ name }) => name).slice(0, 10);
-    setFileNames(fileNames);
     setFiles(slicedArray(files));
   };
 
@@ -60,8 +56,8 @@ function App() {
       <button onClick={onSubmit}>Submit Images</button>
       <div>
         <ul>
-          {fileNames.map((file) => (
-            <li key={uniqid()}>{file}</li>
+          {files.map(({ name }) => (
+            <li key={uniqid()}>{name}</li>
           ))}
         </ul>
       </div>
