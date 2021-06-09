@@ -9,9 +9,11 @@ export default function ZipDownload({ file }) {
       }}
     >
       {file.map((url) => (
-        <a href={url} className={styles.link} key={Date.now()}>
-          {url ? "Download" : ""}
-        </a>
+        <div className={styles.linkWrap} key={Date.now()}>
+          <a href={url} className={styles.link}>
+            {url ? "Download" : ""}
+          </a>
+        </div>
       ))}
     </section>
   );
