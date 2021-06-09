@@ -1,0 +1,16 @@
+.list {
+  max-width: 600px;
+
+  li {
+    list-style: none;
+    padding: 8px;
+  }
+
+  li:nth-child(2n) {
+    background: #0b658f;
+  }
+  li:first-child,
+  li:nth-child(2n + 1) {
+    background: #083044;
+  }
+}
