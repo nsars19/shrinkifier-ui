@@ -11,7 +11,7 @@ export default function ZipDownload({ file }) {
       {file.map((url) => (
         <div className={styles.linkWrap} key={Date.now()}>
           <a href={url} className={styles.link}>
-            {url ? "Download" : ""}
+            {url ? "Download Files" : ""}
           </a>
         </div>
       ))}
