@@ -7,9 +7,18 @@ function App() {
   const [fileDownload, setFileDownload] = useState([]);
   const [dragged, setDragged] = useState(false);
   const [totalSize, setTotalSize] = useState({ pre: 0, post: 0 });
+  const [errorMsg, setErrorMsg] = useState("");
 
   const convertToArray = (files) => [...files];
   const slicedArray = (files) => convertToArray(files).slice(0, 50);
+
+  const goodFileTypes = () =>
+    files.every((file) => {
+      return file.type.split("/")[0] === "image";
+    });
+
+  const sizeOf = (files) =>
+    slicedArray(files).reduce((total, curr) => (total += curr.size), 0);
 
   const onDragOver = (e) => {
     e.preventDefault();
@@ -20,21 +29,26 @@ function App() {
     setDragged(false);
     e.preventDefault();
     const { files } = e.dataTransfer;
-    const size = slicedArray(files).reduce(
-      (total, curr) => (total += curr.size),
-      0
-    );
 
-    setTotalSize({ pre: size, post: 0 });
+    setTotalSize({ pre: sizeOf(files), post: 0 });
     setFiles(slicedArray(files));
+    setErrorMsg("");
   };
 
   const onFileInput = (e) => {
     const { files } = e.target;
     setFiles(slicedArray(files));
+    setTotalSize({ pre: sizeOf(files), post: 0 });
   };
 
   const onSubmit = async () => {
+    if (!goodFileTypes() || errorMsg) {
+      setErrorMsg(
+        "You can only upload images. Please remove anything besides image files."
+      );
+      return;
+    }
+
     const formData = new FormData();
 
     files.forEach((file) => formData.append("files", file));
@@ -106,6 +120,7 @@ function App() {
         ))}
       </div>
       <div>
+        <p>{errorMsg}</p>
         <div>
           {pctSaved}
           {originalSize}
