@@ -24,3 +24,15 @@ h2 {
   margin: 0 5px;
   text-align: center;
 }
+
+@media (min-width: 768px) {
+  .label {
+    max-width: 550px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .label {
+    max-width: 750px;
+  }
+}

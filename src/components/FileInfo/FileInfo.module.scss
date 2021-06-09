@@ -17,3 +17,15 @@
   display: grid;
   justify-content: center;
 }
+
+@media (min-width: 768px) {
+  .info {
+    width: 550px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .info {
+    width: 750px;
+  }
+}
