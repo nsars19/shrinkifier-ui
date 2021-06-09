@@ -1,3 +1,6 @@
+import styles from "./FileInput.module.scss";
+import { FaFileImage } from "react-icons/fa";
+
 export default function FileInput(props) {
   const { setTotalSize, setErrorMsg, setFiles, slicedArray, clearDownload } =
     props;
@@ -28,7 +31,14 @@ export default function FileInput(props) {
   };
 
   return (
-    <label htmlFor="file-input" onDragOver={onDragOver} onDrop={onDrop}>
+    <label
+      htmlFor="file-input"
+      onDragOver={onDragOver}
+      onDrop={onDrop}
+      className={styles.label}
+    >
+      <FaFileImage className={styles.icon} />
+      <h2>Drag your .jpg, .png, .gif, .webp files here</h2>
       <input
         id="file-input"
         onChange={onFileInput}
