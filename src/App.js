@@ -105,6 +105,7 @@ function App() {
         }}
       >
         <input
+          id="file-input"
           onChange={onFileInput}
           type="file"
           multiple
