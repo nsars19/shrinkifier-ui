@@ -55,7 +55,7 @@ export default function SubmitFiles(props) {
           className={styles.button}
           disabled={processing}
         >
-          Submit Images
+          Compress Images
         </button>
       </div>
     </section>
