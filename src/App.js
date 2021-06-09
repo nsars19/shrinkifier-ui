@@ -12,8 +12,6 @@ function App() {
   const [totalSize, setTotalSize] = useState({ pre: 0, post: 0 });
   const [errorMsg, setErrorMsg] = useState("");
 
-  const convertToArray = (files) => [...files];
-  const slicedArray = (files) => convertToArray(files).slice(0, 50);
   const clearDownload = () => setFileDownload([]);
 
   return (
@@ -22,7 +20,6 @@ function App() {
         setTotalSize={setTotalSize}
         setErrorMsg={setErrorMsg}
         setFiles={setFiles}
-        slicedArray={slicedArray}
         clearDownload={clearDownload}
       />
       <SubmitFiles

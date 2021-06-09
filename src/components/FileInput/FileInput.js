@@ -2,9 +2,10 @@ import styles from "./FileInput.module.scss";
 import { FaFileImage } from "react-icons/fa";
 
 export default function FileInput(props) {
-  const { setTotalSize, setErrorMsg, setFiles, slicedArray, clearDownload } =
-    props;
+  const { setTotalSize, setErrorMsg, setFiles, clearDownload } = props;
 
+  const convertToArray = (files) => [...files];
+  const slicedArray = (files) => convertToArray(files).slice(0, 50);
   const sizeOf = (files) =>
     slicedArray(files).reduce((total, curr) => (total += curr.size), 0);
 
