@@ -1,10 +1,12 @@
 import { useState } from "react";
 import uniqid from "uniqid";
+import filesize from "filesize";
 
 function App() {
   const [files, setFiles] = useState([]);
   const [fileDownload, setFileDownload] = useState([]);
   const [dragged, setDragged] = useState(false);
+  const [totalSize, setTotalSize] = useState({ pre: 0, post: 0 });
 
   const convertToArray = (files) => [...files];
   const slicedArray = (files) => convertToArray(files).slice(0, 50);
@@ -18,6 +20,12 @@ function App() {
     setDragged(false);
     e.preventDefault();
     const { files } = e.dataTransfer;
+    const size = slicedArray(files).reduce(
+      (total, curr) => (total += curr.size),
+      0
+    );
+
+    setTotalSize({ ...totalSize, pre: size });
     setFiles(slicedArray(files));
   };
 
@@ -40,8 +48,31 @@ function App() {
     const data = await res.blob();
     const url = URL.createObjectURL(data);
 
+    setTotalSize({ ...totalSize, post: data.size });
     setFileDownload([url]);
   };
+
+  const pctSaved = (
+    <p>
+      {totalSize.pre && totalSize.post
+        ? `New files are ${parseFloat(totalSize.pre / totalSize.post).toFixed(
+            2
+          )}% of the original file size.`
+        : ""}
+    </p>
+  );
+
+  const originalSize = (
+    <p>
+      {totalSize.post ? "processed total: " + filesize(totalSize.post) : ""}
+    </p>
+  );
+
+  const processedSize = (
+    <p>
+      {totalSize.pre ? "preprocessed total: " + filesize(totalSize.pre) : ""}
+    </p>
+  );
 
   return (
     <div>
@@ -75,6 +106,11 @@ function App() {
         ))}
       </div>
       <div>
+        <div>
+          {pctSaved}
+          {originalSize}
+          {processedSize}
+        </div>
         <ul>
           {files.map(({ name }) => (
             <li key={uniqid()}>{name}</li>
