@@ -39,6 +39,7 @@ function App() {
     const { files } = e.target;
     setFiles(slicedArray(files));
     setTotalSize({ pre: sizeOf(files), post: 0 });
+    setErrorMsg("");
   };
 
   const onSubmit = async () => {
