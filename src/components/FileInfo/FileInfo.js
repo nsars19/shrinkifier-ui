@@ -22,7 +22,12 @@ export default function FileInfo({ fileSize: { pre, post } }) {
 
   return (
     <section className={styles.infoWrap}>
-      <div className={styles.info}>
+      <div
+        className={styles.info}
+        style={{
+          display: pre ? "block" : "none",
+        }}
+      >
         {pctSaved}
         {originalSize}
         {processedSize}
