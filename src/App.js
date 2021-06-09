@@ -25,7 +25,7 @@ function App() {
       0
     );
 
-    setTotalSize({ ...totalSize, pre: size });
+    setTotalSize({ pre: size, post: 0 });
     setFiles(slicedArray(files));
   };
 
