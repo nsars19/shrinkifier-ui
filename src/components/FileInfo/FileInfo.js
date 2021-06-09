@@ -5,9 +5,9 @@ export default function FileInfo({ fileSize: { pre, post } }) {
   const pctSaved = (
     <p>
       {pre && post
-        ? `New files are ${parseFloat(pre / post).toFixed(
+        ? `The files are ${parseFloat(((pre - post) / pre) * 100).toFixed(
             2
-          )}% of the original file size.`
+          )}% smaller!`
         : ""}
     </p>
   );
