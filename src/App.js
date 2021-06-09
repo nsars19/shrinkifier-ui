@@ -5,6 +5,7 @@ import ZipDownload from "./components/ZipDownload/ZipDownload";
 import FileInput from "./components/FileInput/FileInput";
 import SubmitFiles from "./components/SubmitFiles/SubmitFiles";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
+import Loader from "./components/Loader/Loader";
 
 function App() {
   const [files, setFiles] = useState([]);
@@ -33,6 +34,7 @@ function App() {
       <ZipDownload file={fileDownload} />
       <FileInfo fileSize={totalSize} />
       <FileList files={files} />
+      <Loader loading={processing} />
     </>
   );
 }
