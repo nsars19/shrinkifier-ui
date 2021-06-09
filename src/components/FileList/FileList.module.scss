@@ -32,11 +32,19 @@
 @media (min-width: 768px) {
   .list {
     min-width: 550px;
+
+    li {
+      max-width: 550px;
+    }
   }
 }
 
 @media (min-width: 1080px) {
   .list {
     min-width: 750px;
+
+    li {
+      max-width: 750px;
+    }
   }
 }
