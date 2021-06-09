@@ -13,6 +13,9 @@ export default function SubmitFiles(props) {
         "You can only upload images. Please remove anything besides image files."
       );
       return;
+    } else if (files.length === 0) {
+      setErrorMsg("Try adding some images first!");
+      return;
     }
 
     const formData = new FormData();
