@@ -26,7 +26,6 @@ function App() {
       />
       <SubmitFiles
         files={files}
-        errorMsg={errorMsg}
         setErrorMsg={setErrorMsg}
         totalSize={totalSize}
         setTotalSize={setTotalSize}

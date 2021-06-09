@@ -1,12 +1,6 @@
 export default function SubmitFiles(props) {
-  const {
-    files,
-    errorMsg,
-    setErrorMsg,
-    totalSize,
-    setTotalSize,
-    setFileDownload,
-  } = props;
+  const { files, setErrorMsg, totalSize, setTotalSize, setFileDownload } =
+    props;
 
   const goodFileTypes = () =>
     files.every((file) => {
@@ -14,7 +8,7 @@ export default function SubmitFiles(props) {
     });
 
   const onSubmit = async () => {
-    if (!goodFileTypes() || errorMsg) {
+    if (!goodFileTypes()) {
       setErrorMsg(
         "You can only upload images. Please remove anything besides image files."
       );
