@@ -2,14 +2,9 @@ import filesize from "filesize";
 import styles from "./FileInfo.module.scss";
 
 export default function FileInfo({ fileSize: { pre, post } }) {
+  const pctDiff = parseFloat(((pre - post) / pre) * 100).toFixed(2);
   const pctSaved = (
-    <p>
-      {pre && post
-        ? `The files are ${parseFloat(((pre - post) / pre) * 100).toFixed(
-            2
-          )}% smaller!`
-        : ""}
-    </p>
+    <p>{pre && post ? `The files are ${pctDiff}% smaller!` : ""}</p>
   );
 
   const originalSize = (
