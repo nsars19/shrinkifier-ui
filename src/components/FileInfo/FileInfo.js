@@ -21,10 +21,12 @@ export default function FileInfo({ fileSize: { pre, post } }) {
   );
 
   return (
-    <div className={styles.info}>
-      {pctSaved}
-      {originalSize}
-      {processedSize}
-    </div>
+    <section className={styles.infoWrap}>
+      <div className={styles.info}>
+        {pctSaved}
+        {originalSize}
+        {processedSize}
+      </div>
+    </section>
   );
 }
