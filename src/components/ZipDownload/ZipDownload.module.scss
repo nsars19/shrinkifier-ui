@@ -1,3 +1,37 @@
 .link {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  min-width: 342px;
+  display: block;
+  padding: 12px;
+  margin: 2px;
+  text-align: center;
+  text-decoration: none;
+  background: #0b658f;
+  border-radius: 6px;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  &:active {
+    transition: background 50ms ease;
+    background: #0f6f9b;
+  }
+}
+
+.link:hover .linkWrap {
+  filter: brightness(1.1);
+}
+
+.linkWrap {
+  border: 2px solid #0b658f;
+  width: fit-content;
+  border-radius: 10px;
+}
+
+.dlWrap {
+  padding-top: 15px;
+  width: 100%;
+  display: grid;
+  justify-content: center;
 }
