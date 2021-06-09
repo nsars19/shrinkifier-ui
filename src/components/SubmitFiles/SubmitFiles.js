@@ -44,14 +44,16 @@ export default function SubmitFiles(props) {
   };
 
   return (
-    <div className={styles.outline}>
-      <button
-        onClick={onSubmit}
-        className={styles.button}
-        disabled={processing}
-      >
-        Submit Images
-      </button>
-    </div>
+    <section className={styles.buttonContainer}>
+      <div className={styles.outline}>
+        <button
+          onClick={onSubmit}
+          className={styles.button}
+          disabled={processing}
+        >
+          Submit Images
+        </button>
+      </div>
+    </section>
   );
 }
