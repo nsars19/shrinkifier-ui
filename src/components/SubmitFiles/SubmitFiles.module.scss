@@ -1,0 +1,36 @@
+.button {
+  width: 342px;
+  border: none;
+  border-style: none;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 2px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  background: #0b658f;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  &:active {
+    transition: background 50ms ease;
+    background: #0f6f9b;
+  }
+}
+
+.outline {
+  border: 2px solid #0b658f;
+  width: fit-content;
+  border-radius: 10px;
+}
+
+.button:hover .outline {
+  filter: brightness(1.1);
+}
+
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
