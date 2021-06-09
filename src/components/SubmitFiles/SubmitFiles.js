@@ -1,6 +1,11 @@
+import styles from "./SubmitFiles.module.scss";
+import { useState } from "react";
+
 export default function SubmitFiles(props) {
   const { files, setErrorMsg, totalSize, setTotalSize, setFileDownload } =
     props;
+
+  const [processing, setProcessing] = useState(false);
 
   const goodFileTypes = () =>
     files.every((file) => {
@@ -18,6 +23,8 @@ export default function SubmitFiles(props) {
       return;
     }
 
+    setProcessing(true);
+
     const formData = new FormData();
 
     files.forEach((file) => formData.append("files", file));
@@ -33,7 +40,18 @@ export default function SubmitFiles(props) {
 
     setTotalSize({ ...totalSize, post: data.size });
     setFileDownload([url]);
+    setProcessing(false);
   };
 
-  return <button onClick={onSubmit}>Submit Images</button>;
+  return (
+    <div className={styles.outline}>
+      <button
+        onClick={onSubmit}
+        className={styles.button}
+        disabled={processing}
+      >
+        Submit Images
+      </button>
+    </div>
+  );
 }
