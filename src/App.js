@@ -12,6 +12,7 @@ function App() {
   const [fileDownload, setFileDownload] = useState([]);
   const [totalSize, setTotalSize] = useState({ pre: 0, post: 0 });
   const [errorMsg, setErrorMsg] = useState("");
+  const [processing, setProcessing] = useState(false);
 
   const clearDownload = () => setFileDownload([]);
 
@@ -29,6 +30,8 @@ function App() {
         totalSize={totalSize}
         setTotalSize={setTotalSize}
         setFileDownload={setFileDownload}
+        processing={processing}
+        setProcessing={setProcessing}
       />
       <ErrorMessage msg={errorMsg} />
       <ZipDownload file={fileDownload} />

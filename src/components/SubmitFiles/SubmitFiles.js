@@ -1,11 +1,15 @@
 import styles from "./SubmitFiles.module.scss";
-import { useState } from "react";
 
 export default function SubmitFiles(props) {
-  const { files, setErrorMsg, totalSize, setTotalSize, setFileDownload } =
-    props;
-
-  const [processing, setProcessing] = useState(false);
+  const {
+    files,
+    setErrorMsg,
+    totalSize,
+    setTotalSize,
+    setFileDownload,
+    processing,
+    setProcessing,
+  } = props;
 
   const goodFileTypes = () =>
     files.every((file) => {
