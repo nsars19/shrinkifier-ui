@@ -8,3 +8,4 @@ Further features that could be added to this app include:
 1) A loading bar/indicator to display progress for each file. Similar to how tinyjpeg/tinypng indicates progress.
 2) The option to download a single file at a time instead of the whole zip file. Again similar to tinyjpeg/tinypng.
 3) The ability to remove individual files from those that have already been added. This is likely to be added in the next version.
+4) Utilize Promises (specifically Promise.all) to send each image file to the api individually to minimize the the processing time.
