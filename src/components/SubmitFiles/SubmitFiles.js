@@ -27,6 +27,7 @@ export default function SubmitFiles(props) {
       return;
     }
 
+    setErrorMsg("");
     setProcessing(true);
 
     const formData = new FormData();
