@@ -36,7 +36,7 @@ function App() {
       <ErrorMessage msg={errorMsg} />
       <ZipDownload file={fileDownload} />
       <FileInfo fileSize={totalSize} />
-      <FileList files={files} />
+      <FileList files={files} setFiles={setFiles} setTotalSize={setTotalSize} />
       <Loader loading={processing} />
     </>
   );
