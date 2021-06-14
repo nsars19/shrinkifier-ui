@@ -12,6 +12,35 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+
+    span:hover svg path {
+      color: #ddd;
+    }
+
+    p {
+      max-width: 92%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    svg {
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    p,
+    span,
+    svg {
+      background: transparent;
+    }
   }
 
   li:first-child,
