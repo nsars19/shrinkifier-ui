@@ -5,7 +5,7 @@ export default function ErrorMessage({ msg }) {
     <section
       className={styles.errorWrap}
       style={{
-        display: msg ? "block" : "none",
+        display: msg ? "flex" : "none",
       }}
     >
       <p className={styles.message}>{msg}</p>
