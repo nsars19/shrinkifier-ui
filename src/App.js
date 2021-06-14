@@ -33,8 +33,8 @@ function App() {
         processing={processing}
         setProcessing={setProcessing}
       />
-      <ErrorMessage msg={errorMsg} />
       <ZipDownload file={fileDownload} />
+      <ErrorMessage msg={errorMsg} />
       <FileInfo fileSize={totalSize} />
       <FileList files={files} setFiles={setFiles} setTotalSize={setTotalSize} />
       <Loader loading={processing} />
