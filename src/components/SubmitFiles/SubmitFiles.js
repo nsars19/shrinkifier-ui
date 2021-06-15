@@ -41,7 +41,8 @@ export default function SubmitFiles(props) {
     });
 
     const data = await res.blob();
-    const url = URL.createObjectURL(data);
+    const file = new File([data], "tinified.zip");
+    const url = URL.createObjectURL(file);
 
     setTotalSize({ ...totalSize, post: data.size });
     setFileDownload([url]);
