@@ -6,6 +6,7 @@ import FileInput from "./components/FileInput/FileInput";
 import SubmitFiles from "./components/SubmitFiles/SubmitFiles";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import Loader from "./components/Loader/Loader";
+import Options from "./components/Options/Options";
 
 function App() {
   const [files, setFiles] = useState([]);
@@ -13,6 +14,12 @@ function App() {
   const [totalSize, setTotalSize] = useState({ pre: 0, post: 0 });
   const [errorMsg, setErrorMsg] = useState("");
   const [processing, setProcessing] = useState(false);
+  const [options, setOptions] = useState({
+    height: "",
+    width: "",
+    format: "",
+    quality: "",
+  });
 
   const clearDownload = () => setFileDownload([]);
 
@@ -24,6 +31,7 @@ function App() {
         setFiles={setFiles}
         clearDownload={clearDownload}
       />
+      <Options options={options} setOptions={setOptions} />
       <SubmitFiles
         files={files}
         setErrorMsg={setErrorMsg}
