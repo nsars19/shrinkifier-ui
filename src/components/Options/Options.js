@@ -19,7 +19,7 @@ export default function Options({ options, setOptions }) {
   };
 
   const qualityInput = () => {
-    const opts = [];
+    const opts = [<option key="null"></option>];
     for (let n = 10; n <= 100; n += 10) {
       opts.push(<option key={n}>{n}</option>);
     }
@@ -42,6 +42,7 @@ export default function Options({ options, setOptions }) {
             className={styles.select}
             value={options.format}
           >
+            <option></option>
             <option>jpeg</option>
             <option>webp</option>
             <option>png</option>
