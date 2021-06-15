@@ -50,7 +50,7 @@ export default function Options({ options, setOptions }) {
           </select>
           <p
             style={{
-              top: options.format ? "-8px" : "14px",
+              top: options.format ? "-10px" : "14px",
               left: options.format ? "4px" : "8px",
             }}
           >
@@ -71,7 +71,7 @@ export default function Options({ options, setOptions }) {
           </select>
           <p
             style={{
-              top: options.quality ? "-8px" : "14px",
+              top: options.quality ? "-10px" : "14px",
               left: options.quality ? "4px" : "8px",
             }}
           >
@@ -94,7 +94,7 @@ export default function Options({ options, setOptions }) {
           </select>
           <p
             style={{
-              top: options.height ? "-8px" : "14px",
+              top: options.height ? "-10px" : "14px",
               left: options.height ? "4px" : "8px",
             }}
           >
@@ -118,7 +118,7 @@ export default function Options({ options, setOptions }) {
           </select>
           <p
             style={{
-              top: options.width ? "-8px" : "14px",
+              top: options.width ? "-10px" : "14px",
               left: options.width ? "4px" : "8px",
             }}
           >
