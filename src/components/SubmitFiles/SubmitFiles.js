@@ -4,7 +4,6 @@ export default function SubmitFiles(props) {
   const {
     files,
     setErrorMsg,
-    totalSize,
     setTotalSize,
     setFileDownload,
     processing,
@@ -44,7 +43,7 @@ export default function SubmitFiles(props) {
     const file = new File([data], "tinified.zip");
     const url = URL.createObjectURL(file);
 
-    setTotalSize({ ...totalSize, post: data.size });
+    setTotalSize((prev) => ({ ...prev, post: data.size }));
     setFileDownload([url]);
     setProcessing(false);
   };

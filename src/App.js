@@ -27,7 +27,6 @@ function App() {
       <SubmitFiles
         files={files}
         setErrorMsg={setErrorMsg}
-        totalSize={totalSize}
         setTotalSize={setTotalSize}
         setFileDownload={setFileDownload}
         processing={processing}
