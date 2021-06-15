@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/shrinkifier-ui/static/css/main.04fc31e3.chunk.css",
-    "main.js": "/shrinkifier-ui/static/js/main.73b947aa.chunk.js",
-    "main.js.map": "/shrinkifier-ui/static/js/main.73b947aa.chunk.js.map",
+    "main.js": "/shrinkifier-ui/static/js/main.b239ffe9.chunk.js",
+    "main.js.map": "/shrinkifier-ui/static/js/main.b239ffe9.chunk.js.map",
     "runtime-main.js": "/shrinkifier-ui/static/js/runtime-main.27588567.js",
     "runtime-main.js.map": "/shrinkifier-ui/static/js/runtime-main.27588567.js.map",
     "static/js/2.81349a67.chunk.js": "/shrinkifier-ui/static/js/2.81349a67.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.27588567.js",
     "static/js/2.81349a67.chunk.js",
     "static/css/main.04fc31e3.chunk.css",
-    "static/js/main.73b947aa.chunk.js"
+    "static/js/main.b239ffe9.chunk.js"
   ]
 }
