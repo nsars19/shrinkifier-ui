@@ -9,6 +9,8 @@ const style = (active) => {
 };
 
 export default function Options({ options, setOptions }) {
+  const { quality, format, height, width } = options;
+
   const onFileTypeChange = (e) => {
     setOptions((prev) => ({ ...prev, format: e.target.value }));
   };
@@ -47,7 +49,7 @@ export default function Options({ options, setOptions }) {
             id="fileOptions"
             name="fileOptions"
             className={styles.select}
-            value={options.format}
+            value={format}
           >
             <option></option>
             <option>jpeg</option>
@@ -55,7 +57,7 @@ export default function Options({ options, setOptions }) {
             <option>png</option>
             <option>gif</option>
           </select>
-          <p style={style(options.format)}>File Type</p>
+          <p style={style(format)}>File Type</p>
         </label>
       </span>
       <span>
@@ -65,18 +67,18 @@ export default function Options({ options, setOptions }) {
             id="inputQuantity"
             name="quantity"
             className={styles.select}
-            value={options.quality}
+            value={quality}
           >
             {qualityInput()}
           </select>
-          <p style={style(options.quality)}>Quality</p>
+          <p style={style(quality)}>Quality</p>
         </label>
       </span>
       <span>
         <label className={styles.label} htmlFor="selectedHeight">
           <select
             onChange={onHeightChange}
-            value={options.height}
+            value={height}
             className={styles.input}
             id="selectedHeight"
             name="height"
@@ -85,24 +87,24 @@ export default function Options({ options, setOptions }) {
           >
             {imgSizes()}
           </select>
-          <p style={style(options.height)}>Height</p>
+          <p style={style(height)}>Height</p>
         </label>
       </span>
       <span>
         <label className={styles.label} htmlFor="selectedWidth">
           <select
             onChange={onWidthChange}
-            value={options.width}
+            value={width}
             className={styles.input}
             id="selectedWidth"
             name="width"
             min="25"
             max="2000"
-            filled={options.width}
+            filled={width}
           >
             {imgSizes()}
           </select>
-          <p style={style(options.width)}>Width</p>
+          <p style={style(width)}>Width</p>
         </label>
       </span>
     </section>
