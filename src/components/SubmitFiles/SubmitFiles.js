@@ -8,6 +8,7 @@ export default function SubmitFiles(props) {
     setFileDownload,
     processing,
     setProcessing,
+    options,
   } = props;
 
   const goodFileTypes = () =>
@@ -31,6 +32,7 @@ export default function SubmitFiles(props) {
 
     const formData = new FormData();
 
+    formData.append("options", JSON.stringify(options));
     files.forEach((file) => formData.append("files", file));
 
     const res = await fetch("https://young-oasis-86497.herokuapp.com/", {

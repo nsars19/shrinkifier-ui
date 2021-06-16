@@ -39,6 +39,7 @@ function App() {
         setFileDownload={setFileDownload}
         processing={processing}
         setProcessing={setProcessing}
+        options={options}
       />
       <ZipDownload file={fileDownload} />
       <FileInfo fileSize={totalSize} />
