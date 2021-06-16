@@ -7,11 +7,11 @@ export default function Options({ options, setOptions }) {
   };
 
   const onHeightChange = (e) => {
-    setOptions((prev) => ({ ...prev, height: parseInt(e.target.value) || "" }));
+    setOptions((prev) => ({ ...prev, height: e.target.value || "" }));
   };
 
   const onWidthChange = (e) => {
-    setOptions((prev) => ({ ...prev, width: parseInt(e.target.value) || "" }));
+    setOptions((prev) => ({ ...prev, width: e.target.value || "" }));
   };
 
   const onQualityChange = (e) => {
