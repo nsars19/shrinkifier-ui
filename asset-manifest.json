@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/shrinkifier-ui/static/css/main.04fc31e3.chunk.css",
-    "main.js": "/shrinkifier-ui/static/js/main.b239ffe9.chunk.js",
-    "main.js.map": "/shrinkifier-ui/static/js/main.b239ffe9.chunk.js.map",
+    "main.css": "/shrinkifier-ui/static/css/main.063bb22c.chunk.css",
+    "main.js": "/shrinkifier-ui/static/js/main.54797067.chunk.js",
+    "main.js.map": "/shrinkifier-ui/static/js/main.54797067.chunk.js.map",
     "runtime-main.js": "/shrinkifier-ui/static/js/runtime-main.27588567.js",
     "runtime-main.js.map": "/shrinkifier-ui/static/js/runtime-main.27588567.js.map",
-    "static/js/2.81349a67.chunk.js": "/shrinkifier-ui/static/js/2.81349a67.chunk.js",
-    "static/js/2.81349a67.chunk.js.map": "/shrinkifier-ui/static/js/2.81349a67.chunk.js.map",
+    "static/js/2.bf4d0275.chunk.js": "/shrinkifier-ui/static/js/2.bf4d0275.chunk.js",
+    "static/js/2.bf4d0275.chunk.js.map": "/shrinkifier-ui/static/js/2.bf4d0275.chunk.js.map",
     "index.html": "/shrinkifier-ui/index.html",
-    "static/css/main.04fc31e3.chunk.css.map": "/shrinkifier-ui/static/css/main.04fc31e3.chunk.css.map",
-    "static/js/2.81349a67.chunk.js.LICENSE.txt": "/shrinkifier-ui/static/js/2.81349a67.chunk.js.LICENSE.txt"
+    "static/css/main.063bb22c.chunk.css.map": "/shrinkifier-ui/static/css/main.063bb22c.chunk.css.map",
+    "static/js/2.bf4d0275.chunk.js.LICENSE.txt": "/shrinkifier-ui/static/js/2.bf4d0275.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.27588567.js",
-    "static/js/2.81349a67.chunk.js",
-    "static/css/main.04fc31e3.chunk.css",
-    "static/js/main.b239ffe9.chunk.js"
+    "static/js/2.bf4d0275.chunk.js",
+    "static/css/main.063bb22c.chunk.css",
+    "static/js/main.54797067.chunk.js"
   ]
 }
