@@ -1,6 +1,13 @@
 import styles from "./Options.module.scss";
 import { sizes } from "./sizes";
 
+const style = (active) => {
+  return {
+    top: active ? "-10px" : "14px",
+    left: active ? "4px" : "8px",
+  };
+};
+
 export default function Options({ options, setOptions }) {
   const onFileTypeChange = (e) => {
     setOptions((prev) => ({ ...prev, format: e.target.value }));
@@ -48,14 +55,7 @@ export default function Options({ options, setOptions }) {
             <option>png</option>
             <option>gif</option>
           </select>
-          <p
-            style={{
-              top: options.format ? "-10px" : "14px",
-              left: options.format ? "4px" : "8px",
-            }}
-          >
-            File Type
-          </p>
+          <p style={style(options.format)}>File Type</p>
         </label>
       </span>
       <span>
@@ -69,14 +69,7 @@ export default function Options({ options, setOptions }) {
           >
             {qualityInput()}
           </select>
-          <p
-            style={{
-              top: options.quality ? "-10px" : "14px",
-              left: options.quality ? "4px" : "8px",
-            }}
-          >
-            Quality
-          </p>
+          <p style={style(options.quality)}>Quality</p>
         </label>
       </span>
       <span>
@@ -92,14 +85,7 @@ export default function Options({ options, setOptions }) {
           >
             {imgSizes()}
           </select>
-          <p
-            style={{
-              top: options.height ? "-10px" : "14px",
-              left: options.height ? "4px" : "8px",
-            }}
-          >
-            Height
-          </p>
+          <p style={style(options.height)}>Height</p>
         </label>
       </span>
       <span>
@@ -116,14 +102,7 @@ export default function Options({ options, setOptions }) {
           >
             {imgSizes()}
           </select>
-          <p
-            style={{
-              top: options.width ? "-10px" : "14px",
-              left: options.width ? "4px" : "8px",
-            }}
-          >
-            Width
-          </p>
+          <p style={style(options.width)}>Width</p>
         </label>
       </span>
     </section>
