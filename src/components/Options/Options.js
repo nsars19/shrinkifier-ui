@@ -55,7 +55,6 @@ export default function Options({ options, setOptions }) {
             <option>jpeg</option>
             <option>webp</option>
             <option>png</option>
-            <option>gif</option>
           </select>
           <p style={style(format)}>File Type</p>
         </label>
