@@ -15,7 +15,7 @@ export default function FileInput(props) {
     e.preventDefault();
     const { files } = e.dataTransfer;
 
-    setFiles((prev) => prev.concat(slicedArray(files)));
+    setFiles((prev) => prev.concat(slicedArray(files)).slice(0, 50));
     setTotalSize(({ pre }) => ({ pre: pre + sizeOf(files), post: 0 }));
     setErrorMsg("");
     clearDownload();
