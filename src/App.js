@@ -15,6 +15,7 @@ function App() {
   const [totalSize, setTotalSize] = useState({ pre: 0, post: 0 });
   const [errorMsg, setErrorMsg] = useState("");
   const [processing, setProcessing] = useState(false);
+  const [hasServerError, setServerError] = useState(false);
   const [options, setOptions] = useState({
     height: "",
     width: "",
@@ -41,6 +42,7 @@ function App() {
         processing={processing}
         setProcessing={setProcessing}
         options={options}
+        setError={setServerError}
       />
       <ZipDownload file={fileDownload} />
       <FileInfo fileSize={totalSize} />
