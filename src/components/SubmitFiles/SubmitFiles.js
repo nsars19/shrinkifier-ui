@@ -9,6 +9,7 @@ export default function SubmitFiles(props) {
     processing,
     setProcessing,
     options,
+    setError,
   } = props;
 
   const goodFileTypes = () =>
@@ -41,13 +42,17 @@ export default function SubmitFiles(props) {
       body: formData,
     });
 
-    const data = await res.blob();
-    const file = new File([data], "tinified.zip");
-    const url = URL.createObjectURL(file);
+    if (res.status === 500) {
+      setError(true);
+    } else {
+      const data = await res.blob();
+      const file = new File([data], "tinified.zip");
+      const url = URL.createObjectURL(file);
 
-    setTotalSize((prev) => ({ ...prev, post: data.size }));
-    setFileDownload([url]);
-    setProcessing(false);
+      setTotalSize((prev) => ({ ...prev, post: data.size }));
+      setFileDownload([url]);
+      setProcessing(false);
+    }
   };
 
   return (
