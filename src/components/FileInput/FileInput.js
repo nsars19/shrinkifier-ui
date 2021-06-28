@@ -9,9 +9,7 @@ export default function FileInput(props) {
   const sizeOf = (files) =>
     slicedArray(files).reduce((total, curr) => (total += curr.size), 0);
 
-  const onDragOver = (e) => {
-    e.preventDefault();
-  };
+  const preventDefault = (e) => e.preventDefault();
 
   const onDrop = (e) => {
     e.preventDefault();
@@ -34,8 +32,9 @@ export default function FileInput(props) {
   return (
     <label
       htmlFor="file-input"
-      onDragOver={onDragOver}
+      onDragOver={preventDefault}
       onDrop={onDrop}
+      onDropCapture={preventDefault}
       className={styles.label}
     >
       <FaFileImage className={styles.icon} />
