@@ -7,6 +7,7 @@ import SubmitFiles from "./components/SubmitFiles/SubmitFiles";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import Loader from "./components/Loader/Loader";
 import Options from "./components/Options/Options";
+import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
 
 function App() {
   const [files, setFiles] = useState([]);
@@ -24,7 +25,7 @@ function App() {
   const clearDownload = () => setFileDownload([]);
 
   return (
-    <>
+    <ErrorBoundary hasError={hasServerError}>
       <FileInput
         setTotalSize={setTotalSize}
         setErrorMsg={setErrorMsg}
@@ -46,7 +47,7 @@ function App() {
       <ErrorMessage msg={errorMsg} />
       <FileList files={files} setFiles={setFiles} setTotalSize={setTotalSize} />
       <Loader loading={processing} />
-    </>
+    </ErrorBoundary>
   );
 }
 
