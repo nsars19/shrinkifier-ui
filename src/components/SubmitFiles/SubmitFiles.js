@@ -36,7 +36,7 @@ export default function SubmitFiles(props) {
     formData.append("options", JSON.stringify(options));
     files.forEach((file) => formData.append("files", file));
 
-    const res = await fetch("https://young-oasis-86497.herokuapp.com/", {
+    const res = await fetch(process.env.REACT_APP_API_ENDPOINT, {
       method: "post",
       mode: "cors",
       body: formData,
