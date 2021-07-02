@@ -46,7 +46,9 @@ export default function SubmitFiles(props) {
       setError(true);
     } else {
       const data = await res.blob();
-      const file = new File([data], "tinified.zip");
+      const file = new File([data], "tinified.zip", {
+        type: "application/zip",
+      });
       const url = URL.createObjectURL(file);
 
       setTotalSize((prev) => ({ ...prev, post: data.size }));
