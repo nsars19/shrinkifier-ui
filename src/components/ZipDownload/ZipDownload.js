@@ -10,7 +10,7 @@ export default function ZipDownload({ file }) {
     >
       {file.map((url) => (
         <div className={styles.linkWrap} key={Date.now()}>
-          <a href={url} className={styles.link}>
+          <a href={url} className={styles.link} download="tinified.zip">
             {url ? "Download Files" : ""}
           </a>
         </div>
