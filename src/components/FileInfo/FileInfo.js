@@ -29,9 +29,9 @@ export default function FileInfo({ fileSize: { pre, post } }) {
           display: pre ? "block" : "none",
         }}
       >
-        {pctSaved()}
         {originalSize}
         {processedSize}
+        {pctSaved()}
       </div>
     </section>
   );
