@@ -26,7 +26,11 @@ export default function Options({ options, setOptions }) {
   const qualityInput = () => {
     const opts = [<option key="null"></option>];
     for (let n = 10; n <= 100; n += 10) {
-      opts.push(<option key={n}>{n}</option>);
+      opts.push(
+        <option key={n} value={n / 100}>
+          {n}
+        </option>
+      );
     }
 
     return opts;
