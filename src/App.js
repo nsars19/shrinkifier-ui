@@ -8,6 +8,7 @@ import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import Loader from "./components/Loader/Loader";
 import Options from "./components/Options/Options";
 import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
+import JSZip from "jszip";
 
 function App() {
   const [files, setFiles] = useState([]);
@@ -22,6 +23,8 @@ function App() {
     format: "",
     quality: "",
   });
+
+  const zip = new JSZip();
 
   const clearDownload = () => setFileDownload([]);
 
@@ -43,6 +46,7 @@ function App() {
         setProcessing={setProcessing}
         options={options}
         setError={setServerError}
+        zip={zip}
       />
       <ZipDownload file={fileDownload} />
       <FileInfo fileSize={totalSize} />
