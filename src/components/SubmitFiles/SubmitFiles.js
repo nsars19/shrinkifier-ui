@@ -23,6 +23,7 @@ export default function SubmitFiles(props) {
     const opts = {
       maxWidthOrHeight: options.maxDimension || 720,
       fileType: `image/${options.format || "jpeg"}`,
+      initialQuality: options.quality || 0.8,
     };
 
     for (const file of files) {
