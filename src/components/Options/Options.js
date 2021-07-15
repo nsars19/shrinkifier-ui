@@ -9,18 +9,14 @@ const style = (active) => {
 };
 
 export default function Options({ options, setOptions }) {
-  const { quality, format, height, width } = options;
+  const { quality, format, maxDimension } = options;
 
   const onFileTypeChange = (e) => {
     setOptions((prev) => ({ ...prev, format: e.target.value }));
   };
 
-  const onHeightChange = (e) => {
-    setOptions((prev) => ({ ...prev, height: e.target.value || "" }));
-  };
-
-  const onWidthChange = (e) => {
-    setOptions((prev) => ({ ...prev, width: e.target.value || "" }));
+  const onMaxDimensionChange = (e) => {
+    setOptions((prev) => ({ ...prev, maxDimension: e.target.value || "" }));
   };
 
   const onQualityChange = (e) => {
@@ -74,36 +70,20 @@ export default function Options({ options, setOptions }) {
         </label>
       </span>
       <span>
-        <label className={styles.label} htmlFor="selectedHeight">
-          <select
-            onChange={onHeightChange}
-            value={height}
-            className={styles.input}
-            id="selectedHeight"
-            name="height"
-            min="25"
-            max="2000"
-          >
-            {imgSizes()}
-          </select>
-          <p style={style(height)}>Height</p>
-        </label>
-      </span>
-      <span>
         <label className={styles.label} htmlFor="selectedWidth">
           <select
-            onChange={onWidthChange}
-            value={width}
+            onChange={onMaxDimensionChange}
+            value={maxDimension}
             className={styles.input}
             id="selectedWidth"
             name="width"
             min="25"
             max="2000"
-            filled={width}
+            filled={maxDimension}
           >
             {imgSizes()}
           </select>
-          <p style={style(width)}>Width</p>
+          <p style={style(maxDimension)}>Max Size(px)</p>
         </label>
       </span>
     </section>
