@@ -7,7 +7,7 @@ import SubmitFiles from "./components/SubmitFiles/SubmitFiles";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import Loader from "./components/Loader/Loader";
 import Options from "./components/Options/Options";
-import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 import JSZip from "jszip";
 
 function App() {
