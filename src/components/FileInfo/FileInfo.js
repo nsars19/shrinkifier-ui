@@ -13,11 +13,11 @@ export default function FileInfo({ fileSize: { pre, post } }) {
     }
   };
 
-  const originalSize = (
+  const processedSize = (
     <p>{post ? "processed total: " + filesize(post) : ""}</p>
   );
 
-  const processedSize = (
+  const originalSize = (
     <p>{pre ? "preprocessed total: " + filesize(pre) : ""}</p>
   );
 
