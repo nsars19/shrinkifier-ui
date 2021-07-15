@@ -1,4 +1,5 @@
 import styles from "./SubmitFiles.module.scss";
+import imageCompression from "browser-image-compression";
 
 export default function SubmitFiles(props) {
   const {
@@ -18,6 +19,21 @@ export default function SubmitFiles(props) {
       return file.type.split("/")[0] === "image";
     });
 
+  const compress = async (files) => {
+    const opts = {
+      maxWidthOrHeight: options.maxDimension || 720,
+      fileType: `image/${options.format || "jpeg"}`,
+    };
+
+    for (const file of files) {
+      await imageCompression(file, opts).then((data) => {
+        const fileName = data.name.split(".")[0];
+        const ext = `.${options.format || "jpeg"}`;
+        zip.file(fileName + ext, data);
+      });
+    }
+  };
+
   const onSubmit = async () => {
     if (!goodFileTypes()) {
       setErrorMsg(
@@ -32,29 +48,17 @@ export default function SubmitFiles(props) {
     setErrorMsg("");
     setProcessing(true);
 
-    const formData = new FormData();
+    try {
+      await compress(files);
 
-    formData.append("options", JSON.stringify(options));
-    files.forEach((file) => formData.append("files", file));
-
-    const res = await fetch(process.env.REACT_APP_API_ENDPOINT, {
-      method: "post",
-      mode: "cors",
-      body: formData,
-    });
-
-    if (res.status === 500) {
-      setError(true);
-    } else {
-      const data = await res.blob();
-      const file = new File([data], "tinified.zip", {
-        type: "application/zip",
+      zip.generateAsync({ type: "blob" }).then((zip) => {
+        setTotalSize((prev) => ({ ...prev, post: zip.size }));
+        const url = URL.createObjectURL(zip);
+        setFileDownload([url]);
+        setProcessing(false);
       });
-      const url = URL.createObjectURL(file);
-
-      setTotalSize((prev) => ({ ...prev, post: data.size }));
-      setFileDownload([url]);
-      setProcessing(false);
+    } catch {
+      setError(true);
     }
   };
 
