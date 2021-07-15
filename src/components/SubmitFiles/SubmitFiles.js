@@ -21,7 +21,7 @@ export default function SubmitFiles(props) {
 
   const compress = async (files) => {
     const opts = {
-      maxWidthOrHeight: options.maxDimension || 720,
+      maxWidthOrHeight: parseInt(options.maxDimension) || 720,
       fileType: `image/${options.format || "jpeg"}`,
       initialQuality: parseFloat(options.quality) || 0.8,
     };
