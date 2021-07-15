@@ -18,8 +18,7 @@ function App() {
   const [processing, setProcessing] = useState(false);
   const [hasServerError, setServerError] = useState(false);
   const [options, setOptions] = useState({
-    height: "",
-    width: "",
+    maxDimension: "",
     format: "",
     quality: "",
   });
