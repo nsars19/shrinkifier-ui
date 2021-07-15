@@ -10,6 +10,7 @@ export default function SubmitFiles(props) {
     setProcessing,
     options,
     setError,
+    zip,
   } = props;
 
   const goodFileTypes = () =>
