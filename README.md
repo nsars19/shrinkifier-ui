@@ -8,7 +8,7 @@ To run this application locally:
 1) Clone this repository <code>git clone git@github.com:nsars19/shrinkifier-ui.git</code>
 2) Select which version of the applocation you wish to use.
   <br />a. <code>main</code> branch contains v1.0
-  <br />b. <code>client-side-implementation</code> contains v2.0
+  <br />b. <code>git checkout client-side-implementation</code> to use v2.0
 3) Start the development server <code>npm start</code>
 4) Have fun!
 
