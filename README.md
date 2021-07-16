@@ -19,5 +19,3 @@ Further features that could be added to this app include:
 
 1. A loading bar/indicator to display progress for each file. Similar to how tinyjpeg/tinypng indicates progress.
 2. The option to download a single file at a time instead of the whole zip file. Again similar to tinyjpeg/tinypng.
-3. Utilize Promises (specifically Promise.all) to send each image file to the api individually to minimize the the processing time.
-4. Add options to customize the arguments passed to the compressor function. ie. add a form with options to select height and width, compression algorithm used, quality of images, etc.
